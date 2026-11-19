@@ -1,0 +1,22 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  // Project instructions: AGENTS.md is also auto-discovered; listed here explicitly.
+  "instructions": ["AGENTS.md"],
+  "watcher": {
+    "ignore": ["data/**", "data-demo/**", "data-simulation/**", ".venv/**", "__pycache__/**"]
+  },
+  "commands": {
+    "demo": {
+      "description": "Run fictional demo server (no network, no token)",
+      "template": "Run ./.venv/Scripts/python.exe run.py --demo on Windows (or .venv/bin/python run.py --demo on Linux) and open http://127.0.0.1:8766. Never upload DEMO_ exports to Weblate."
+    },
+    "simulate": {
+      "description": "Run read-only simulation with artificial gaps",
+      "template": "Run ./.venv/Scripts/python.exe run.py --simulate on Windows (or .venv/bin/python run.py --simulate on Linux) and open http://127.0.0.1:8767. Never upload SIMULATION_ exports to Weblate."
+    },
+    "test": {
+      "description": "Run Python unit tests",
+      "template": "Run ./.venv/Scripts/python.exe -m unittest discover -s tests -v on Windows (or .venv/bin/python -m unittest discover -s tests -v on Linux). Browser tests need RUN_BROWSER_TESTS=1, Chrome, and Node >= 22."
+    }
+  }
+}
